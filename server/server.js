@@ -12,14 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use( require('./routes/usuario'));
-
-/* mongoose.connect('mongodb://localhost:27017/cafe', (err, resp) => {
-
-    if(err) throw err;
-
-    console.log('Base de Datos ONLINE');
-}); */
+//configuración global de rutas
+app.use( require('./routes/index'));
 
 mongoose.connect(process.env.URLDB ,
   { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true},
@@ -30,13 +24,6 @@ mongoose.connect(process.env.URLDB ,
     } 
     console.log('BBDD Online');
 });
-
-
-/* mongoose.connect('mongodb://localhost:27017/cafe', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}); */
-
 
 app.listen(process.env.PORT, () => {
     console.log('Escuchando el puerto', process.env.PORT)
