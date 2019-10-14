@@ -19,3 +19,6 @@ if(process.env.NODE_ENV === 'dev'){
     urlDB = 'mongodb://fgarnica:TAyBg51RYRphs3d1@cluster0-vkbj2.mongodb.net/cafe';
 }
 process.env.URLDB =urlDB;
+
+//Google Client ID
+process.env.CLIENT_ID = process.env.CLIENT_ID || '112910576335-8c89gliq8tv9u1i3a7pir383brug3e51.apps.googleusercontent.com';
