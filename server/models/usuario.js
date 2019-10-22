@@ -40,7 +40,7 @@ let usuarioSchema = new Schema({
         default: false
     }
  
-})
+});
  
 //para evitar devolver la contraseña, al crear un usuario
 usuarioSchema.methods.toJSON = function() {
@@ -51,7 +51,7 @@ usuarioSchema.methods.toJSON = function() {
  
     return userObject;
  
-}
+};
  
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe ser único' });
  
